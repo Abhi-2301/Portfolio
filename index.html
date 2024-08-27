@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" alt="" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#myprojects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="headertext">
+                <p>Full Stack Developer</p>
+                <h1>Hi, I'm <span>Abhijeet</span><br>Shinde From India</h1>
+            </div>
+        </div>
+    </div>
+    <!-- about -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                <img src="images/img2.jpeg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About me</h1>
+                <p>I am a fullstack developer with a knack for crafting robust and scalable applications.With 3 years of hands-on experience, Ihave honed my skills in html,css and js as well as backend technologies like mysql.My goal is to leverage my expertise to create innovative solutions that drive busineess growth and deliver exceptional user experiences.</p> 
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links " onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Java Programming</span></li>
+                        <li><span>Web Developement</span></li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2024-Present</span><br>MCA-at JSPM RSCOE</li>
+                        <li><span>2020-2023</span><br>BSC(Computer Science) from Savitribai Phule Pune University,Pune-</li>
+                        <li><span>2018-2020</span><br>12th from Sarswati Juniour College,Akurdi-55.60%</li>
+                        <li><span>2018</span><br>10th Swami Vivekanand School Nigdi-76.60%</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- projects -->
+    <div id="myprojects">
+        <div class="container">
+            <h1 class="sub-title">Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/amazon.jpg">
+                    <div class="layer">
+                        <h3>Amazon Clone</h3>
+                        <p>I make amazon clone using html css</p>
+                        <a href="https://abhi-2301.github.io/amazonclone/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/online auction.avif">
+                    <div class="layer">
+                        <h3>Online Auction System</h3>
+                        <p>I make online auction system using html,css and js.For backend we use mysql database.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/portfolio.jpg">
+                    <div class="layer">
+                        <h3>Amazon Clone</h3>
+                        <p>I make amazon clone using html css</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See More</a>
+        </div>
+    </div>
+    <!-- contact -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-regular fa-paper-plane"></i>abhijeet.shinde.230301@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>9766482303</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/i_am_abhi_023?igsh=MTZoMWF3ZHJwcWJ2Mg=="><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://github.com/Abhi-2301"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/abhijeet-shinde-0010251b8/"><i class="fa-brands fa-linkedin-in "></i></a>
+                        <a href="https://www.hackerrank.com/profile/abhijeet_shinde3"><i class="fa-brands fa-hackerrank"></i></a>
+                    </div>
+                    <a href="images/my-cv.pdf" download class="btn btn2">Download cv</a>
+                </div> 
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Name" required>
+                        <input type="email" name="Email"placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents")
+
+        function opentab(tabname)
+        {
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            } 
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab"); 
+            } 
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        var smenu=document.getElementById("sidemenu");
+
+        function openmenu(){
+            smenu.style.right="0";
+        }
+        function closemenu(){
+            smenu.style.right="-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwRQieDq-gfYfmqC5LrbGEmPJ9p8aLZQeaV3cod3mHd6HZZLYew0Sn8otMnnN_zkdW6/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response =>{
+                msg.innerHTML="message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML=""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>  
+</body>
+</html>
